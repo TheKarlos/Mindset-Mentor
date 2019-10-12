@@ -18,6 +18,12 @@ const fs = require("fs"); // inbuilt filesystem library for file I/O
 
 //--
 
+//-- GET CONFIG
+
+global.config = require("./config.json");
+
+//--
+
 //-- INITIALISE DB
 
 var serverDB = new sqlite3("./db/database.db")
