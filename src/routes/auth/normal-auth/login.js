@@ -32,7 +32,7 @@ loginRoute.post('/login', function(req, res){
 
     // match with DB
     var row = global.serverDB.prepare("SELECT * FROM `Users` WHERE Email=?").get(formData.email);
-    if(!row || row === undefined || !bcrypt.compareSync(formData.password, row["Password"])){
+    if(!row || row === undefined || row["Password"] == "" || formData.password == "" || !bcrypt.compareSync(formData.password, row["Password"])){
         loginResult.message = "Invalid credentials!";
         res.json(loginResult);
         return;

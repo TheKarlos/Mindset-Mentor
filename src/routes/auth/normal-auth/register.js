@@ -35,7 +35,12 @@ registerRoutes.post('/register', function (req, res) {
 });
 
 registerRoutes.get('/register', function (req, res) {
-    res.render('register');
+    const authUrl = global.oAuth2Client.generateAuthUrl({
+        access_type: 'online',
+        scope: global.config["g_oauth"]["scopes"]
+      });
+
+    res.render('register', {googleAuthUrl: authUrl});
 });
 
 module.exports = registerRoutes;
