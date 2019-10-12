@@ -1,16 +1,13 @@
 "use strict";
 
 const registerRoutes = require('express').Router();
+const bcrypt = require('bcrypt');
 
 registerRoutes.post('/register', function (req, res) {
     var registerForm = {
         name: req.body.name,
-        gender: req.body.gender,
-        DOB: req.body.DOB,
         email: req.body.email,
         password: req.body.password,
-        metrics: req.body.metrics,
-        likes: req.body.likes
     }
 
     var registerResult = {
@@ -27,18 +24,18 @@ registerRoutes.post('/register', function (req, res) {
     }
 
     // insert data
-    global.serverDB.prepare("INSERT INTO `Users` (Name, Email, Password) VALUES (?,?,?)").run(registerForm.name, registerForm.email, registerForm.password);
-
-    // insert profile
+    global.serverDB.prepare("INSERT INTO `Users` (Name, Email, Password) VALUES (?,?,?)").run(registerForm.name, registerForm.email, bcrypt.hashSync(registerForm.password, 10));
+    
+    // login
     user = global.serverDB.prepare("SELECT * FROM `Users` WHERE Email = ?").get(registerForm.email);
-    global.serverDB.prepare("INSERT INTO `Profile` (UID, Gender, DOB, Metrics, Likes) VALUES (?,?,?,?,?)").run(user["UID"], registerForm.gender, registerForm.DOB, registerForm.metrics, registerForm.likes);
+    global.serverDB.prepare("INSERT INTO `Sessions` (SID, UID) VALUES (?,?)").run(req.session.id, user['UID']);
 
     registerResult.success = true;
     res.json(registerResult);
 });
 
 registerRoutes.get('/register', function (req, res) {
-    res.render('register', { oauth: req.query.googleauth, name: req.query.name, email: req.query.email });
+    res.render('register');
 });
 
 module.exports = registerRoutes;
