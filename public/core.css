@@ -6,6 +6,10 @@ body {
     background-color: #e2ea6e !important;
 }
 
+.bg-secondary{
+    background-color:#92afd7 !important;
+
+}
 .text-primary{
     color: #e2ea6e !important;
 }
