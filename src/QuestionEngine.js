@@ -1,15 +1,14 @@
 var fs = require("fs");
 
 var jsonFile = fs.readFileSync('./question-bank/conditionalQuestions.json');
-var jsonFile2 = fs.readFileSync('./question-bank/awaysQuestions.json');
+var jsonFile2 = fs.readFileSync('./question-bank/alwaysQuestions.json');
 
 var conditionalJSON = JSON.parse(jsonFile);
-var alwaysJSON = JSON.parse(jsonFile);
+var alwaysJSON = JSON.parse(jsonFile2);
 
 var exampleVariables = {"Sociable" : 0, "Active" : 0, "Productive" : 0, "Happy" : 0, "Sleep" : 0, "Study": 0};
 
-function getQuestion(questionIndex, variables) { //0 index please
-    console.log("Hello World!");
+function getQuestion(questionIndex, variables=exampleVariables) { //0 index please
 
     if(i < alwaysJSON.length){
         return alwaysJSON[i];

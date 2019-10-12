@@ -44,6 +44,5 @@ console.log("Server running at http://localhost:80");
 app.get('/', function(req, res){
   res.render('index');
 })
-questionEngine.getQuestion();
 //--
 
