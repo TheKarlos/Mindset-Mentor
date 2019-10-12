@@ -9,6 +9,9 @@ router.use(require('./auth/normal-auth/register'));
 // import oauth
 router.use(require('./auth/oauth/login-register-oauth'));
 
+
+//import views
+router.use(require('./view-routes/planner'));
 //--
 
 module.exports = router;
