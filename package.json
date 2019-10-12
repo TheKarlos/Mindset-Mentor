@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/slack69/Health-Services-Hackathon-2019#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "better-sqlite3": "^5.4.3",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "express-session": "^1.17.0"
+    "express-session": "^1.17.0",
+    "googleapis": "^43.0.0"
   }
 }
