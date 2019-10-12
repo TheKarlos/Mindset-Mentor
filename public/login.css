@@ -1,12 +1,15 @@
 .login-form {
     width: 340px;
-    margin: 30px auto;
 }
 .login-form form {
     margin-bottom: 15px;
-    background: #f7f7f7;
+    /* background: #f7f7f7; */
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 30px;
+}
+form{
+    width: 80%;
+    max-width: 350px;
 }
 .login-form h2 {
     margin: 0 0 15px;
@@ -31,9 +34,10 @@
 }
 .or-seperator i {
     padding: 0 10px;
-    background: #f7f7f7;
+    background: #574d68;
+    color: white;
     position: relative;
-    top: -11px;
+    top: -13px;
     z-index: 1;
 }
 .social-btn .btn {
@@ -49,4 +53,10 @@
 }
 .input-group-prepend .fa{
     font-size: 18px;
+}
+.forgot-password{
+    color: #e2ea6e !important;
+}
+.forgot-password:hover{
+    color:white !important;
 }
