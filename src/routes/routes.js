@@ -12,6 +12,10 @@ router.use(require('./auth/oauth/login-register-oauth'));
 
 //import views
 router.use(require('./view-routes/planner'));
+router.use(require('./view-routes/recommendations/daily'));
+router.use(require('./view-routes/recommendations/overall'));
+
+
 //--
 
 module.exports = router;
