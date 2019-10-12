@@ -18,6 +18,12 @@ const fs = require("fs"); // inbuilt filesystem library for file I/O
 
 //--
 
+//-- INITIALISE DB
+
+var serverDB = new sqlite3("./db/database.db")
+
+//--
+
 //-- INITIALISE WEBSERVER
 
 // create https webserver
