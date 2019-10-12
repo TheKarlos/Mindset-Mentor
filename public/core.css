@@ -17,3 +17,7 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 a.text-primary:focus, a.text-primary:hover, button.text-primary:focus, button.text-primary:hover{
     color:#afc6f7 !important;
 }
+
+.border-2 {
+    border-width:2px !important;
+}
