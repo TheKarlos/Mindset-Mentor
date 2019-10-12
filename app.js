@@ -48,12 +48,10 @@ app.use(session({
 
 app.set("view engine", "ejs"); // set express parser to ejs (embedded js)
 
+app.use(require("./src/routes")); // import routes
+
 app.listen(80); // create the server and listen to port 80
 console.log("Server running at http://localhost:80");
-
-app.get('/', function(req, res){
-  res.render('index');
-})
 
 //--
 
