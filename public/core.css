@@ -21,3 +21,7 @@ a.text-primary:focus, a.text-primary:hover, button.text-primary:focus, button.te
 .border-2 {
     border-width:2px !important;
 }
+
+.border-4 {
+    border-width:4px !important;
+}
