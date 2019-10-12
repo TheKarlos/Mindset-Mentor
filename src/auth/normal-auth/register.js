@@ -4,13 +4,13 @@ const registerRoutes = require('express').Router();
 
 registerRoutes.post('/register', function (req, res) {
     var registerForm = {
-        name = req.body.name,
-        gender = req.body.gender,
-        DOB = req.body.DOB,
-        email = req.body.email,
-        password = req.body.password,
-        metrics = req.body.metrics,
-        likes = req.body.likes
+        name: req.body.name,
+        gender: req.body.gender,
+        DOB: req.body.DOB,
+        email: req.body.email,
+        password: req.body.password,
+        metrics: req.body.metrics,
+        likes: req.body.likes
     }
 
     var registerResult = {

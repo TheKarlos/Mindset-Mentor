@@ -14,8 +14,8 @@ loginRoute.get('/login', function(req, res){
 // handle login request
 loginRoute.post('/login', function(req, res){
     var formData = {
-        email = req.body.email,
-        password = req.body.password
+        email: req.body.email,
+        password: req.body.password
     }
 
     var loginResult = {
