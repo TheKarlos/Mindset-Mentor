@@ -5,10 +5,17 @@
 
 const crypto = require('crypto');
 const loginRoute = require('express').Router();
+const { google } = require('googleapis');
+const bcrypt = require('bcrypt');
 
 // serve webpage
 loginRoute.get('/login', function(req, res){
-    res.render('login'); // TODO: get actual name later
+    const authUrl = global.oAuth2Client.generateAuthUrl({
+        access_type: 'online',
+        scope: global.config["g_oauth"]["scopes"]
+      });
+
+    res.render('login', {googleAuthUrl: authUrl});
 });
 
 // handle login request
@@ -24,8 +31,8 @@ loginRoute.post('/login', function(req, res){
     }
 
     // match with DB
-    var row = global.serverDB.prepare("SELECT * FROM `Users` WHERE Email=? AND Password=?").get(formData.email, formData.password);
-    if(!row || row === undefined){
+    var row = global.serverDB.prepare("SELECT * FROM `Users` WHERE Email=?").get(formData.email);
+    if(!row || row === undefined || !bcrypt.compareSync(formData.password, row["Password"])){
         loginResult.message = "Invalid credentials!";
         res.json(loginResult);
         return;
@@ -35,7 +42,7 @@ loginRoute.post('/login', function(req, res){
     global.serverDB.prepare("INSERT INTO `Sessions` (SID, UID) VALUES (?,?)").run(req.session.id, row['UID']);
 
     // success
-    res.success = true;
+    loginResult.success = true;
     res.json(loginResult);
 });
 

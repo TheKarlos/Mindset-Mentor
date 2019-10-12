@@ -5,6 +5,9 @@
 
 //-- LIBRARY INCLUDES
 
+// google
+const { google } = require('googleapis');
+
 // database
 const sqlite3 = require("better-sqlite3"); // database librarys
 
@@ -24,9 +27,17 @@ global.config = require("./config.json");
 
 //--
 
+//-- OAUTH2 CLIENT
+
+const auth_object = global.config["g_oauth"]["auth_object"];
+global.oAuth2Client = new google.auth.OAuth2(
+  auth_object["client_ID"], auth_object["client_secret"], auth_object["redirect"]);
+
+//--
+
 //-- INITIALISE DB
 
-var serverDB = new sqlite3("./db/database.db")
+global.serverDB = new sqlite3("./db/database.db")
 
 //--
 
@@ -37,18 +48,19 @@ var app = express();
 
 app.use(express.static('public')); // make assets available
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 })); // use body-parser middleware to read form data
 app.use(session({
-    secret: 'health hackathon masters',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
-  }))
+  secret: 'health hackathon masters',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}))
 
 app.set("view engine", "ejs"); // set express parser to ejs (embedded js)
 
-app.use(require("./src/routes")); // import routes
+app.use(require("./src/middleware/session-check"));
+app.use(require("./src/routes/routes")); // import routes
 
 app.listen(80); // create the server and listen to port 80
 console.log("Server running at http://localhost:80");
