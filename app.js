@@ -5,6 +5,8 @@
 
 //-- LIBRARY INCLUDES
 
+const questionEngine = require("./src/QuestionEngine.js");
+
 // database
 const sqlite3 = require("better-sqlite3"); // database librarys
 
@@ -42,6 +44,6 @@ console.log("Server running at http://localhost:80");
 app.get('/', function(req, res){
   res.render('index');
 })
-
+questionEngine.getQuestion();
 //--
 

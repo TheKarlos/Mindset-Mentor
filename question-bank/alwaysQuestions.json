@@ -1,0 +1,10 @@
+[
+ {
+   "ID": 0,
+   "Question Frequency (Days)": 1,
+   "Question Text": "How were your social interactions today?",
+   "CSV Options": "Poor, OK, Good",
+   "CSV Option Weightings": "-0.5, 0, 0.2",
+   "VariableName Out": "Sociability"
+ }
+]

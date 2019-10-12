@@ -1,0 +1,32 @@
+[
+ {
+   "ID": 0,
+   "Frequency Variable Names CSV": "Sleep",
+   "Frequency Variable Conditions CSV": "<",
+   "Variable Value CSV": -0.25,
+   "Question Frequency if True CSV (0 is immediate)": 1,
+   "Default Question Frequency (Days)": 3,
+   "Variable Requirement to ask question": "Sleep",
+   "Condition": "<",
+   "Input Variable Value": 0,
+   "Question Text": "How do you feel your quality of sleep is progressing?",
+   "CSV Options": "Getting Much Worse, Getting Worse, Not Progressing, Progressing, Progressing Well",
+   "CSV Option Weightings": "-0.5, 0.2, 0, 0.2, 0.5",
+   "VariableName Out": "Sleep"
+ },
+ {
+   "ID": 1,
+   "Frequency Variable Names CSV": "Example Variable",
+   "Frequency Variable Conditions CSV": ">",
+   "Variable Value CSV": 0.3,
+   "Question Frequency if True CSV (0 is immediate)": 1,
+   "Default Question Frequency (Days)": 2,
+   "Variable Requirement to ask question": "ExampleVar",
+   "Condition": "<",
+   "Input Variable Value": 1,
+   "Question Text": "Question Text",
+   "CSV Options": "IDK",
+   "CSV Option Weightings": "2,1,4",
+   "VariableName Out": "Koo"
+ }
+]
