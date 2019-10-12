@@ -14,6 +14,7 @@ router.use(require('./auth/oauth/login-register-oauth'));
 router.use(require('./view-routes/planner'));
 router.use(require('./view-routes/recommendations/daily'));
 router.use(require('./view-routes/recommendations/overall'));
+router.use(require('./view-routes/index'));
 
 
 //--
