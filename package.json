@@ -23,5 +23,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "googleapis": "^43.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
   }
 }

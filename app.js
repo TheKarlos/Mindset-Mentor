@@ -24,6 +24,12 @@ global.config = require("./config.json");
 
 //--
 
+//-- INITIALISE DB
+
+var serverDB = new sqlite3("./db/database.db")
+
+//--
+
 //-- INITIALISE WEBSERVER
 
 // create https webserver
@@ -44,6 +50,10 @@ app.set("view engine", "ejs"); // set express parser to ejs (embedded js)
 
 app.listen(80); // create the server and listen to port 80
 console.log("Server running at http://localhost:80");
+
+app.get('/', function(req, res){
+  res.render('index');
+})
 
 //--
 
