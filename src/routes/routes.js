@@ -15,6 +15,7 @@ router.use(require('./auth/oauth/login-register-oauth'));
 router.use(require('./app/planner'));
 router.use(require('./app/daily'));
 router.use(require('./app/dashboard'));
+router.use(require('./app/info'));
 router.use(require('./index'));
 
 //setup

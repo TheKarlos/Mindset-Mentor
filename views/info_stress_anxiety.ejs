@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <% include ../partials/head %>
+    <style>
+        .w-70 {
+            width: 70%;
+        }
+
+        .w-30 {
+            width: 30%;
+        }
+
+        .img-small {
+            height: 250px;
+            width: 250px;
+        }
+
+        .app-ss {
+            height: 175px;
+            border: 2px solid #e2ea6e;
+        }
+    </style>
+</head>
+
+<body class="has-drawer">
+    <% include ../partials/drawer %>
+    <div class="container d-flex flex-row h-100">
+        <div class="d-flex flex-column w-70 justify-content-around">
+            <div>
+                <h1 class="py-2 text-white border-bottom my-3">Stress and Anxiety</h1>
+            </div>
+            <div>
+                <h3 class="py-2 text-white border-bottom my-2">Self help tips</h3>
+                <ul class="text-white">
+                    <li>Try out these regular breather exercises</li>
+                    <li>Write out any triggers in your journal to reflect exercises</li>
+                    <li>Try setting yourself a positive mantra - recite something positive and exciting</li>
+                    <li>Plan out a daily routine for a sense of purpose and structure</li>
+                </ul>
+                <h3 class="py-2 text-white border-bottom my-2">Seek help</h3>
+                <ul class="text-white">
+                    <li>Read up on the NHS anxiety advice <a href="#">here</a></li>
+                    <li>If you have recurrent effects of anxiety or stress, see your GP</li>
+                    <li>Try talking to someone you trust</li>
+                    <li>Mind.org gives some really good advice <a href="#">here</a></li>
+                </ul>
+                <h3 class="py-2 text-white border-bottom my-2">Local activities and services</h3>
+                <ul class="text-white">
+                    <li>You can find details of support groups, forums, and helplines on the Anxiety Care, Anxiety UK,
+                        No more Panic, No Panic, and Triumph Over Phobia UK websites</li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-column w-30 justify-content-around align-items-center h-100">
+            <img class="img-small" src="/stress.png">
+        </div>
+    </div>
+    <% include ../partials/scripts %>
+</body>
+
+</html>
