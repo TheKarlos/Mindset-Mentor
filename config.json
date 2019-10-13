@@ -7,5 +7,5 @@
         },
         "scopes": ["https://www.googleapis.com/auth/userinfo.email", "profile"]
     },
-    "securedURLs": ["/dashboard"]
+    "securedURLs": [""]
 }
