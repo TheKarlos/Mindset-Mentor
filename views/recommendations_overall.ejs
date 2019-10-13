@@ -45,15 +45,15 @@
             <a id="Activeness" href="/dashboard?trait=Activeness"><img class="rec-image-small"
                     src="/activeness.png"></a>
             <a id="Happiness" href="/dashboard?trait=Happiness"><img class="rec-image-small" src="/happiness.png"></a>
-            <a id="StressAnxiety" href="/dashboard?trait=StressAnxiety"><img class="rec-image-small"
+            <a id="Loneliness" href="/dashboard?trait=Loneliness"><img class="rec-image-small"
                     src="/blank.png"></a>
         </div>
         <div class="container card px-2 py-4 my-2 d-flex flex-row bg-secondary">
             <div class="d-flex flex-column w-50">
-                <h3 class="text-white"><%=traitTitle%></h3>
+                <h2 class="text-white"><%=traitTitle%></h2>
                 <% traitSuggestions.forEach(function(trait) { %>
                 <div class="card px-1 py-2 my-2 md-flex flex-row bg-primary rounded">
-                    <h3><%= trait %></h3>
+                    <h4><%= trait %></h4>
                 </div>
                 <% }); %>
             </div>
