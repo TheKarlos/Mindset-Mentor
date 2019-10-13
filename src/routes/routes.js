@@ -20,4 +20,8 @@ router.use(require('./index'));
 //setup
 router.use(require('./app/setup'));
 
+router.use(require('./app/about'));
+
+router.use(require('./app/checkup'))
+
 module.exports = router;

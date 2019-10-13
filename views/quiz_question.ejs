@@ -19,36 +19,35 @@
 </head>
 
 <body class="has-drawer">
-    <% include ../partials/drawer %>
     <div class="quiz d-flex flex-column align-items-center justify-content-center h-100">
         <img src="/happiness.png"></img>
-        <h1 class="px-5 py-2 text-white border-bottom border-2 my-3">How are you feeling today?</h1>
+        <h1 class="px-5 py-2 text-white border-bottom border-2 my-3"><%=questionTitle%></h1>
         <div class="d-flex flex-row justify-content-around w-100">
-            <div class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
+            <a href="/checkup?delta=-0.2" class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
                 <div class="card-body">
                     Really bad
                 </div>
-            </div>
-            <div class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
+            </a>
+            <a href="/checkup?delta=-0.1" class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
                 <div class="card-body">
                     Bad
                 </div>
-            </div>
-            <div class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
+            </a>
+            <a href="/checkup?delta=0" class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
                 <div class="card-body">
                     Okay
                 </div>
-            </div>
-            <div class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
+            </a>
+            <a href="/checkup?delta=0.1" class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
                 <div class="card-body">
                     Good
                 </div>
-            </div>
-            <div class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
+            </a>
+            <a href="/checkup?delta=0.2" class="card quiz-answer-card bg-primary my-4 text-center font-weight-bold">
                 <div class="card-body">
                     Really good
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <% include ../partials/scripts %>
