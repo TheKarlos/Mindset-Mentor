@@ -11,10 +11,10 @@ router.use(require('./auth/oauth/login-register-oauth'));
 
 
 //import views
-router.use(require('./view-routes/planner'));
-router.use(require('./view-routes/recommendations/daily'));
-router.use(require('./view-routes/recommendations/overall'));
-router.use(require('./view-routes/index'));
+router.use(require('./app/planner'));
+router.use(require('./app/daily'));
+router.use(require('./app/dashboard'));
+router.use(require('./index'));
 
 
 //--

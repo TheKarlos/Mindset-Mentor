@@ -4,7 +4,10 @@
 const indexRoute = require('express').Router();
 
 indexRoute.get('/', function (req, res) {
-    res.render('index')
+    if(global.serverDB.prepare("SELECT * FROM `Sessions` WHERE SID=?").get(req.session.id)){
+        res.redirect('/dashboard');
+    }
+    res.render('index');
 })
 
 module.exports = indexRoute;
