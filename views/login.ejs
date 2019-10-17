@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="/login.css">
+
+    <script src="/login.js"></script>
+</head>
+
+<body>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <form action="/login" id="form">
+            <h2 class="text-center text-white">Sign In</h2>
+            <div class="text-center social-btn">
+                <a href="<%=googleAuthUrl%>" class="btn btn-danger btn-block text-center"><i class="fa fa-google"></i> Sign in with
+                    <b>Google</b></a>
+            </div>
+            <div class="or-seperator"><i>or</i></div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    </div>
+                    <input id="form_password" type="password" class="form-control" name="password" placeholder="Password"
+                        required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <button id="submit_button" type="submit" onclick="submitForm(event);" class="btn btn-success btn-block login-btn">Sign in</button>
+            </div>
+            <div class="clearfix">
+                <label class="pull-left checkbox-inline text-white"><input type="checkbox"> Remember me</label>
+                <a href="#" class=" forgot-password pull-right">Forgot Password?</a>
+            </div>
+        </form>
+        <div class="hint-text small text-white">Don't have an account? <a href="/register" class="text-primary">Register Now!</a></div>
+    </div>
+    <% include ../partials/scripts %>    
+</body>
+
+</html>

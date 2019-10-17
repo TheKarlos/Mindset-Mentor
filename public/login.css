@@ -1,0 +1,45 @@
+form{
+    width: 80%;
+    max-width: 350px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.login-btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.or-seperator {
+    margin: 20px 0 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+.or-seperator i {
+    padding: 0 10px;
+    background: #574d68;
+    color: white;
+    position: relative;
+    top: -13px;
+    z-index: 1;
+}
+.social-btn .btn {
+    margin: 10px 0;
+    font-size: 15px;
+    text-align: left; 
+    line-height: 24px;       
+}
+.social-btn .btn i {
+    float: left;
+    margin: 4px 0 5px;
+    min-width: 15px;
+}
+.input-group-prepend .fa{
+    font-size: 18px;
+}
+.forgot-password{
+    color: #e2ea6e !important;
+}
+.forgot-password:hover{
+    color:white !important;
+}

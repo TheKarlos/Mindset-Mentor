@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <% include ../partials/head %>
+    <style>
+        .rec-image {
+            height: 100px;
+        }
+
+        .rec-card-border {
+            border: 4px solid #92afd7;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="has-drawer">
+    <% include ../partials/drawer %>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <h1 class="px-5 py-2 text-white text-center border-bottom my-3">Recommendations</h1>
+        <div class="card bg-transparent d-flex flex-row mb-2 px-2 py-2 align-items-center rec-card-border">
+            <div>
+                <img class="rec-image" src="/happiness.png">
+            </div>
+            <div class="d-flex flex-column text-white">
+                Try going to a club to meet new people.
+                <a class="text-white" href="#">Here are some local things to do in Leeds</a>
+            </div>
+        </div>
+        <div class="card bg-transparent d-flex flex-row mb-2 px-2 py-2 align-items-center rec-card-border">
+            <div>
+                <img class="rec-image" src="/happiness.png">
+            </div>
+            <div class="d-flex flex-column text-white">
+                You should try to sleep more
+                <a class="text-white" href="#">Benefits of proper sleep</a>
+            </div>
+        </div>
+        <div class="card bg-transparent d-flex flex-row mb-2 px-2 py-2 align-items-center rec-card-border">
+            <div>
+                <img class="rec-image" src="/happiness.png">
+            </div>
+            <div class="d-flex flex-column text-white">
+                Try out some stress-relief strategies
+                <a class="text-white" href="#">Click to learn more!</a>
+            </div>
+        </div>
+    </div>
+    <% include ../partials/scripts %>
+</body>
+
+</html>

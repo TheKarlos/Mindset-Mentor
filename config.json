@@ -1,0 +1,11 @@
+{
+    "g_oauth":{
+        "auth_object": {
+            "client_ID":"703701859714-ph2k43pmum2qolj2d1aiakhqqoqrl3ph.apps.googleusercontent.com",
+            "client_secret":"SUvlWJDLeuLHArkJ6x04sHUO",
+            "redirect":"http://lvh.me/login_oauth"
+        },
+        "scopes": ["https://www.googleapis.com/auth/userinfo.email", "profile"]
+    },
+    "securedURLs": ["/dashboard", "/planner"]
+}

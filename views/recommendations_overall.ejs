@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.css">
+    <style>
+        a .rec-image-small {
+            height: 75px;
+            border: 0;
+        }
+
+        a {
+            z-index: 1;
+        }
+
+        a .rec-image-small:hover,
+        a .rec-image-small:focus {
+            height: 100px;
+            z-index: 1;
+            margin-bottom: -25px;
+        }
+
+        a .rec-image-active {
+            height: 100px;
+            z-index: 1;
+            margin-bottom: -25px;
+        }
+
+        .rec-card-border {
+            border: 4px solid #92afd7;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="has-drawer">
+    <% include ../partials/drawer %>
+    <div class="d-flex flex-column align-items-center justify-content-center h-100">
+        <h1 class="px-5 py-2 text-white text-center border-bottom my-3">Recommendations and goals</h1>
+        <div class="w-100 d-flex flex-row justify-content-around z-1">
+            <a id="Sociability" href="/dashboard?trait=Sociability"><img class="rec-image-small"
+                    src="/sociability.png"></a>
+            <a id="Productivity" href="/dashboard?trait=Productivity"><img class="rec-image-small"
+                    src="/productivity.png"></a>
+            <a id="Activeness" href="/dashboard?trait=Activeness"><img class="rec-image-small"
+                    src="/activeness.png"></a>
+            <a id="Happiness" href="/dashboard?trait=Happiness"><img class="rec-image-small" src="/happiness.png"></a>
+            <a id="Loneliness" href="/dashboard?trait=Loneliness"><img class="rec-image-small"
+                    src="/blank.png"></a>
+        </div>
+        <div class="container card px-2 py-4 my-2 d-flex flex-row bg-secondary">
+            <div class="d-flex flex-column w-50">
+                <h2 class="text-white"><%=traitTitle%></h2>
+                <% traitSuggestions.forEach(function(trait) { %>
+                <div class="card px-1 py-2 my-2 md-flex flex-row bg-primary rounded">
+                    <h4><%= trait %></h4>
+                </div>
+                <% }); %>
+            </div>
+            <div class="d-flex flex-column w-50">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+        <span id='variableJSON' hidden>
+            <%= JSON.stringify(traitData); %>
+        </span>
+        <% include ../partials/scripts %>
+        <script>
+            var id = "#<%= traitTitle %>";
+            $(id.replace('/', '')).children('img').addClass('rec-image-active');
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+        <script>
+            var data = {
+                labels: [0, 1],
+                datasets: [{
+                    data: ["<%= traitData %>"],
+                    label: "<%= traitTitle %>",
+                    borderColor: "#3e95cd",
+                    fill: false
+                }]
+            }
+            var options = {
+                title: {
+                    display: true,
+                    text: "<%= traitTitle %>"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            stepSize: 0.2
+                        }
+                    }]
+                }
+            }
+            var ctx = document.getElementById('myChart');
+            var myLineChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+        </script>
+</body>
+
+</html>

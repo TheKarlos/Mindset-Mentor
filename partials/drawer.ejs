@@ -1,0 +1,55 @@
+<div id="drawerExample" class="drawer dw-xs-10 dw-sm-6 dw-md-4 fold" aria-labelledby="drawerExample">
+    <div class="drawer-controls">
+        <a href="#drawerExample" data-toggle="drawer" aria-foldedopen="false" aria-controls="drawerExample"><img
+                style="height:48px;" src="/menu.png"></a>
+    </div>
+    <div class="drawer-contents">
+        <div class="drawer-heading">
+            <img class="drawer-list-icon mb-2" src="/profile.png">
+            <span class="font-weight-bold">User</span>
+        </div>
+        <div class="drawer-body">
+        </div>
+        <ul class="drawer-nav">
+            <li role="presentation"><a href="/">Dashboard</a></li>
+            <li role="presentation"><a href="/recommendations/daily">Daily Recommendations</a></li>
+            <li role="presentation"><a href="/planner">My Journal</a></li>
+            <li role="presentation"><a href="/checkup">Daily Checkup</a></li>
+            <li role="presentation"><a href="/about">About</a></li>
+            <li role="presentation"><a class="info-a" href="#">
+                Info
+                <div class="info-div">
+                    <ul>
+                        <li>Depression</li>
+                        <li>Sleep</li>
+                        <li>Obesity</li>
+                        <li>Addiction</li>
+                        <li>Self-harm</li>
+                        <li>Stress/Anxiety</li>
+                        <li>Bullying</li>
+                        <li>Anger</li>
+                        <li>Diseases</li>
+                        <li>Discrimination</li>
+                        <li>Body Image</li>
+                    </ul>
+                </div>
+            </a></li>
+        </ul>
+    </div>
+</div>
+<style>
+    .drawer-contents {
+        background-color: #3F3649;
+        color: white;
+    }
+
+    .drawer-nav li a {
+        color: white;
+    }
+
+    .drawer-list-icon {
+        height: 48px;
+    }
+    .info-a .info-div{display: none;}
+    .info-a:hover .info-div{display: block;}
+</style>
